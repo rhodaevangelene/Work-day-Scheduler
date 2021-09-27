@@ -43,6 +43,7 @@ $(".saveBtn").on("click", function () {
     var hour = $(this).siblings(".hour").text();
 
     localStorage.setItem(hour, descr);
+    alert("Updated successfuly.")
 })
 
 //Page refreshed events persist
