@@ -44,3 +44,25 @@ $(".saveBtn").on("click", function () {
 
     localStorage.setItem(hour, descr);
 })
+
+//Page refreshed events persist
+// run an each for .time-block
+$(".time-block").each(function () {
+    var savedhourNode = $(this).children(".hour");
+    var savedHour = savedhourNode[0].innerHTML;
+    console.log('savedHour: ', savedHour);
+    var savedVal = localStorage.getItem(savedHour);
+    
+    console.log(savedVal)
+
+    if (savedVal !== null) {
+        console.log('IT RAN')
+        $(this).children(".description").text(savedVal);
+    }
+
+
+    // store value of .hour div in a variable
+    // check local storage with the value of hour to see if you have a description saved
+    // if you have a description saved udpate the innerText of .description with the returned value of getItem
+
+})
