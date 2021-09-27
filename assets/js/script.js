@@ -36,3 +36,11 @@ function timeUpdate() {
 };
 
 timeUpdate();
+//Save text to local storage when save is selected
+
+$(".saveBtn").on("click", function () {
+    var descr = $(this).siblings(".description").val();
+    var hour = $(this).siblings(".hour").text();
+
+    localStorage.setItem(hour, descr);
+})
